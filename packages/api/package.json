@@ -1,0 +1,20 @@
+{
+  "name": "@avaluz/api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cliente de API abstrato e tenant-aware (AvaLuz + AvaMax)",
+  "type": "module",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "dependencies": {
+    "@avaluz/types": "1.0.0"
+  },
+  "peerDependencies": {
+    "@supabase/supabase-js": "^2"
+  },
+  "sideEffects": false
+}

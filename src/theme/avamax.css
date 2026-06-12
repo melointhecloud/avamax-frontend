@@ -1,0 +1,41 @@
+/**
+ * AvaMax (RE/MAX) tenant theme — CSS variables.
+ *
+ * Source of truth for AvaMax brand colors, extracted from the monorepo
+ * hardcodes catalogued in COUPLING-ANALYSIS.md (C3–C5):
+ *   - Primary brand blue: #003DA5 (RE/MAX blue)
+ *   - Accent brand red:   #CC0000 (RE/MAX red)
+ *
+ * These variables are the default values consumed via var(--tenant-*).
+ * At runtime, TenantThemeProvider can override them per tenant by setting
+ * inline styles on a wrapper element (theme.cssVars), so this file only
+ * provides the static AvaMax fallback. No component should hardcode #003DA5
+ * again — always reference var(--tenant-primary).
+ */
+
+:root {
+  /* Brand palette (hex) */
+  --tenant-primary: #003DA5;
+  --tenant-primary-hover: #002f7d;
+  --tenant-accent: #CC0000;
+  --tenant-accent-hover: #a30000;
+
+  /* On-brand foregrounds */
+  --tenant-on-primary: #ffffff;
+  --tenant-on-accent: #ffffff;
+
+  /* Brand name + assets (consumable by branding-aware components) */
+  --tenant-brand-name: "AvaMax";
+}
+
+/*
+ * Scoped theme wrapper. TenantThemeProvider renders a div with this class so
+ * brand styles are contained and can be swapped without leaking globally.
+ */
+.tenant-theme {
+  /* Inherit the brand primary into common semantic slots that the shared
+     design system reads. Tenants override --tenant-primary, everything below
+     follows automatically. */
+  --brand-primary: var(--tenant-primary);
+  --brand-accent: var(--tenant-accent);
+}

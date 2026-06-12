@@ -83,6 +83,51 @@ CI/CD reads these from GitHub repository **secrets** of the same name (see `.git
 
 ---
 
+## Project Structure
+
+```
+src/
+├── contexts/
+│   ├── TenantContext.tsx      # Single source of truth for tenant identity (slug, organization, brandName, cssVars, assets)
+│   └── AuthContext.tsx
+├── components/auth/
+│   ├── TenantRoute.tsx        # Tenant-aware guard (replaces ProtectedRoute + RemaxRoute)
+│   ├── TenantThemeProvider.tsx# Applies tenant CSS variables (replaces RemaxThemeProvider)
+│   ├── MfrRoute.tsx / CeoRoute.tsx
+├── components/pdf/
+│   ├── TenantPdfPreviewDialog.tsx     # Parametrizable PDF dialog (companyName / logoUrl / primaryColor)
+│   └── TenantPdfDarkThemeStyles.tsx   # Parametrizable dark-theme styles
+├── hooks/useTenantPrefix.ts   # Tenant-aware path helper (replaces useRemaxPrefix)
+├── theme/avamax.css           # AvaMax CSS variables (--tenant-primary, etc.)
+└── routes/index.tsx           # Routes served at root (no /remax namespace)
+
+packages/                       # Bundled shared design system (@avaluz/ui, lib, types, api)
+public/assets/                  # Brand assets served (not statically imported)
+```
+
+### Shared packages
+
+`packages/*` are bundled into this repo (not consumed from the monorepo) so the
+app is self-contained and the `@avaluz/*` path aliases resolve unchanged. They
+keep the `@avaluz/*` scope because they are the **shared** design system used by
+both AvaLuz and AvaMax (per Phase 2).
+
+### Tenancy & branding
+
+- Tenant identity lives in `TenantContext` (`AVAMAX_TENANT` is the default/only
+  tenant). When Phase 5's `brands` table lands, swap the static config for a
+  DB-driven lookup — no consumer changes needed.
+- Branding is driven by CSS variables (`var(--tenant-primary)`, etc.) defined in
+  `src/theme/avamax.css` and applied via `TenantThemeProvider`.
+- Routes are served at the root (`/home`, `/avaliar`, `/time/*`, `/mfr/*`,
+  `/ceo/*`) — the `/remax` namespace from the monorepo was removed.
+
+See `docs/BLOCKERS.md` for deferred items (Phase 4 / Phase 5).
+
+---
+
 ## Status
 
-🚧 **Phase 3 in progress** — repository scaffolding. Application structure (Subtasks 3.2–3.5) is migrated separately by @dev.
+✅ **Subtasks 3.2–3.5 complete** — base structure copied, branding isolated,
+routes de-namespaced, PDF templates parametrized. `typecheck`, `lint` and `build`
+all pass. Pending: Phase 4 (backend `tenant_id`) and Phase 5 (branding engine).

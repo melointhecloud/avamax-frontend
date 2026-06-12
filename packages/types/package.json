@@ -1,0 +1,14 @@
+{
+  "name": "@avaluz/types",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tipos e schemas centrais (AvaLuz + AvaMax)",
+  "type": "module",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "sideEffects": false
+}

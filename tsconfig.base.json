@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@avaluz/ui": ["./packages/ui/index.ts"],
+      "@avaluz/ui/*": ["./packages/ui/*"],
+      "@avaluz/lib": ["./packages/lib/index.ts"],
+      "@avaluz/lib/*": ["./packages/lib/*"],
+      "@avaluz/types": ["./packages/types/index.ts"],
+      "@avaluz/types/*": ["./packages/types/*"],
+      "@avaluz/api": ["./packages/api/index.ts"],
+      "@avaluz/api/*": ["./packages/api/*"]
+    }
+  }
+}

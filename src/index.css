@@ -1,0 +1,544 @@
+/* Fontes agora são carregadas localmente via @fontsource no main.tsx */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Corporate Blue Theme */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Primary: Corporate Blue */
+    --primary: 215 90% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Slate Gray */
+    --secondary: 215 15% 95%;
+    --secondary-foreground: 215 25% 25%;
+
+    --muted: 215 15% 94%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Accent: Teal */
+    --accent: 175 70% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Success Green */
+    --success: 145 70% 40%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning Amber */
+    --warning: 38 95% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 20% 88%;
+    --input: 215 20% 88%;
+    --ring: 215 90% 45%;
+
+    /* Chart colors */
+    --chart-1: 215 90% 45%;
+    --chart-2: 175 70% 40%;
+    --chart-3: 145 70% 40%;
+    --chart-4: 38 95% 50%;
+    --chart-5: 280 70% 55%;
+
+    /* Sidebar */
+    --sidebar: 215 30% 18%;
+    --sidebar-foreground: 210 15% 92%;
+    --sidebar-primary: 215 90% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 35% 25%;
+    --sidebar-accent-foreground: 210 15% 95%;
+    --sidebar-border: 215 30% 25%;
+    --sidebar-ring: 215 90% 55%;
+
+    /* Team Dashboard Dark Theme (AvaLuz colors) */
+    --team-background: 215 40% 8%;
+    --team-foreground: 210 20% 95%;
+    --team-card: 215 35% 12%;
+    --team-card-foreground: 210 20% 95%;
+    --team-border: 215 30% 18%;
+    --team-muted: 215 20% 55%;
+    --team-accent: 215 35% 18%;
+    --team-primary: 215 90% 50%;
+    --team-primary-foreground: 0 0% 100%;
+    --team-orange: 24 90% 45%;
+    --team-sidebar: 215 40% 10%;
+  }
+
+  /* RE/MAX Theme Override — light */
+  .remax-theme {
+    --background: 0 0% 98%;
+    --foreground: 216 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 216 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 216 30% 15%;
+
+    --primary: 216 100% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 216 15% 95%;
+    --secondary-foreground: 216 25% 25%;
+
+    --muted: 216 15% 94%;
+    --muted-foreground: 216 15% 45%;
+
+    --accent: 216 100% 32%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 216 20% 88%;
+    --input: 216 20% 88%;
+    --ring: 216 100% 32%;
+
+    /* Interactive states */
+    --remax-red: 0 100% 40%;
+    --remax-blue: 216 100% 32%;
+    --remax-blue-light: 216 100% 95%;
+    --remax-blue-hover: 216 100% 38%;
+    --remax-red-hover: 0 100% 34%;
+
+    /* Sidebar — white background */
+    --sidebar: 0 0% 100%;
+    --sidebar-foreground: 216 30% 25%;
+    --sidebar-primary: 216 100% 32%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 216 100% 96%;
+    --sidebar-accent-foreground: 216 100% 32%;
+    --sidebar-border: 216 20% 90%;
+    --sidebar-ring: 216 100% 32%;
+    --sidebar-muted: 216 15% 55%;
+    --sidebar-muted-foreground: 216 15% 45%;
+
+    /* Success / Warning overrides for remax */
+    --success: 216 100% 32%;
+    --success-foreground: 0 0% 100%;
+    --warning: 216 80% 45%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Team tokens override for light remax theme */
+    --team-background: 0 0% 98%;
+    --team-foreground: 216 30% 15%;
+    --team-card: 0 0% 100%;
+    --team-card-foreground: 216 30% 15%;
+    --team-border: 216 20% 85%;
+    --team-muted: 216 15% 45%;
+    --team-accent: 216 100% 96%;
+    --team-primary: 216 100% 32%;
+    --team-primary-foreground: 0 0% 100%;
+    --team-orange: 216 100% 32%;
+    --team-sidebar: 0 0% 100%;
+
+    color-scheme: light;
+  }
+
+  /* RE/MAX Theme — dark mode */
+  .dark .remax-theme {
+    --background: 216 25% 10%;
+    --foreground: 216 15% 92%;
+
+    --card: 216 25% 14%;
+    --card-foreground: 216 15% 92%;
+
+    --popover: 216 25% 14%;
+    --popover-foreground: 216 15% 92%;
+
+    --primary: 216 100% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 216 20% 18%;
+    --secondary-foreground: 216 15% 85%;
+
+    --muted: 216 20% 18%;
+    --muted-foreground: 216 15% 55%;
+
+    --accent: 216 100% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 216 20% 22%;
+    --input: 216 20% 22%;
+    --ring: 216 100% 45%;
+
+    --remax-red: 0 100% 40%;
+    --remax-blue: 216 100% 45%;
+    --remax-blue-light: 216 30% 18%;
+    --remax-blue-hover: 216 100% 50%;
+    --remax-red-hover: 0 100% 34%;
+
+    --sidebar: 216 30% 12%;
+    --sidebar-foreground: 216 15% 88%;
+    --sidebar-primary: 216 100% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 216 25% 18%;
+    --sidebar-accent-foreground: 216 100% 60%;
+    --sidebar-border: 216 20% 20%;
+    --sidebar-ring: 216 100% 45%;
+    --sidebar-muted: 216 15% 50%;
+    --sidebar-muted-foreground: 216 15% 45%;
+
+    --success: 216 100% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 216 80% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --team-background: 216 25% 10%;
+    --team-foreground: 216 15% 92%;
+    --team-card: 216 25% 14%;
+    --team-card-foreground: 216 15% 92%;
+    --team-border: 216 20% 22%;
+    --team-muted: 216 15% 50%;
+    --team-accent: 216 25% 18%;
+    --team-primary: 216 100% 45%;
+    --team-primary-foreground: 0 0% 100%;
+    --team-orange: 216 100% 45%;
+    --team-sidebar: 216 30% 12%;
+
+    color-scheme: dark;
+  }
+
+  /* ── AvaMax overrides for hardcoded Avaluz-orange (#DF6009) ── */
+  .remax-theme .text-\[\#DF6009\] { color: hsl(216 100% 32%) !important; }
+  .remax-theme .bg-\[\#DF6009\] { background-color: hsl(216 100% 32%) !important; }
+  .remax-theme .bg-\[\#DF6009\]\/5 { background-color: hsl(216 100% 32% / 0.05) !important; }
+  .remax-theme .bg-\[\#DF6009\]\/10 { background-color: hsl(216 100% 32% / 0.1) !important; }
+  .remax-theme .bg-\[\#DF6009\]\/20 { background-color: hsl(216 100% 32% / 0.2) !important; }
+  .remax-theme .hover\:bg-\[\#DF6009\]\/90:hover { background-color: hsl(216 100% 38%) !important; }
+  .remax-theme .border-\[\#DF6009\] { border-color: hsl(216 100% 32%) !important; }
+  .remax-theme .border-\[\#DF6009\]\/20 { border-color: hsl(216 100% 32% / 0.2) !important; }
+  .remax-theme .ring-\[\#DF6009\]\/20 { --tw-ring-color: hsl(216 100% 32% / 0.2) !important; }
+  .remax-theme .shadow-\[\#DF6009\]\/20 { --tw-shadow-color: hsl(216 100% 32% / 0.2) !important; }
+
+  /* Override Avaluz navy (#0A3F74) to AvaMax blue */
+  .remax-theme .border-\[\#0A3F74\]\/30 { border-color: hsl(216 100% 32% / 0.3) !important; }
+  .remax-theme .bg-gradient-to-b.from-\[\#0A3F74\]\/5 { --tw-gradient-from: hsl(216 100% 32% / 0.05) !important; }
+  .remax-theme .hover\:shadow-\[\#0A3F74\]\/15:hover { --tw-shadow-color: hsl(216 100% 32% / 0.15) !important; }
+
+
+
+  .dark {
+    --background: 215 30% 10%;
+    --foreground: 210 15% 95%;
+
+    --card: 215 30% 14%;
+    --card-foreground: 210 15% 95%;
+
+    --popover: 215 30% 14%;
+    --popover-foreground: 210 15% 95%;
+
+    --primary: 215 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 25% 20%;
+    --secondary-foreground: 210 15% 90%;
+
+    --muted: 215 25% 18%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 175 65% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 145 65% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 90% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 25% 22%;
+    --input: 215 25% 22%;
+    --ring: 215 85% 55%;
+
+    --sidebar: 215 35% 12%;
+    --sidebar-foreground: 210 15% 92%;
+    --sidebar-primary: 215 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 30% 18%;
+    --sidebar-accent-foreground: 210 15% 95%;
+    --sidebar-border: 215 30% 18%;
+    --sidebar-ring: 215 85% 55%;
+
+    /* Team Dashboard inherits same dark values */
+    --team-background: 215 40% 8%;
+    --team-foreground: 210 20% 95%;
+    --team-card: 215 35% 12%;
+    --team-card-foreground: 210 20% 95%;
+    --team-border: 215 30% 18%;
+    --team-muted: 215 20% 55%;
+    --team-accent: 215 35% 18%;
+    --team-primary: 215 90% 50%;
+    --team-primary-foreground: 0 0% 100%;
+    --team-orange: 24 90% 45%;
+    --team-sidebar: 215 40% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* ── RE/MAX theme: all dropdown/select/popover/combobox portals ── */
+body:not(.dark):has(.remax-theme) [data-radix-select-content],
+/* RE/MAX portal overrides — LIGHT */
+html:not(.dark) body:has(.remax-theme) [data-radix-select-content],
+html:not(.dark) body:has(.remax-theme) [data-radix-popper-content-wrapper] [role="listbox"],
+html:not(.dark) body:has(.remax-theme) [data-radix-popper-content-wrapper] [data-radix-menu-content],
+html:not(.dark) body:has(.remax-theme) [data-radix-popper-content-wrapper] [data-radix-dropdown-menu-content],
+html:not(.dark) body:has(.remax-theme) [data-radix-popper-content-wrapper] [data-radix-popover-content],
+html:not(.dark) body:has(.remax-theme) [cmdk-list],
+html:not(.dark) body:has(.remax-theme) [data-radix-popper-content-wrapper] .bg-popover {
+  background-color: white !important;
+  color: hsl(216, 30%, 15%) !important;
+}
+
+html:not(.dark) body:has(.remax-theme) [data-radix-select-content] [role="option"],
+html:not(.dark) body:has(.remax-theme) [data-radix-popper-content-wrapper] [role="option"],
+html:not(.dark) body:has(.remax-theme) [data-radix-popper-content-wrapper] [role="menuitem"],
+html:not(.dark) body:has(.remax-theme) [cmdk-item] {
+  color: hsl(216, 30%, 15%) !important;
+  background-color: white !important;
+}
+
+/* RE/MAX portal overrides — DARK */
+html.dark body:has(.remax-theme) [data-radix-select-content],
+html.dark body:has(.remax-theme) [data-radix-popper-content-wrapper] [role="listbox"],
+html.dark body:has(.remax-theme) [data-radix-popper-content-wrapper] [data-radix-menu-content],
+html.dark body:has(.remax-theme) [data-radix-popper-content-wrapper] [data-radix-dropdown-menu-content],
+html.dark body:has(.remax-theme) [data-radix-popper-content-wrapper] [data-radix-popover-content],
+html.dark body:has(.remax-theme) [cmdk-list],
+html.dark body:has(.remax-theme) [data-radix-popper-content-wrapper] .bg-popover {
+  background-color: hsl(216, 25%, 14%) !important;
+  color: hsl(216, 15%, 92%) !important;
+  border-color: hsl(216, 20%, 22%) !important;
+}
+
+html.dark body:has(.remax-theme) [data-radix-select-content] [role="option"],
+html.dark body:has(.remax-theme) [data-radix-popper-content-wrapper] [role="option"],
+html.dark body:has(.remax-theme) [data-radix-popper-content-wrapper] [role="menuitem"],
+html.dark body:has(.remax-theme) [cmdk-item] {
+  color: hsl(216, 15%, 92%) !important;
+  background-color: hsl(216, 25%, 14%) !important;
+}
+
+/* Highlighted/selected items (both modes) */
+body:has(.remax-theme) [data-radix-select-content] [role="option"][data-highlighted],
+body:has(.remax-theme) [data-radix-select-content] [role="option"][data-state="checked"],
+body:has(.remax-theme) [data-radix-popper-content-wrapper] [role="option"][data-highlighted],
+body:has(.remax-theme) [data-radix-popper-content-wrapper] [role="option"][data-state="checked"],
+body:has(.remax-theme) [data-radix-popper-content-wrapper] [role="option"][aria-selected="true"],
+body:has(.remax-theme) [data-radix-popper-content-wrapper] [role="menuitem"][data-highlighted],
+body:has(.remax-theme) [cmdk-item][data-selected="true"],
+body:has(.remax-theme) [cmdk-item][aria-selected="true"] {
+  background-color: hsl(216, 100%, 40%) !important;
+  color: white !important;
+}
+
+/* Select trigger button in remax (light only) */
+html:not(.dark) body:has(.remax-theme) [data-radix-select-trigger],
+.remax-theme:not(:is(.dark *)) [data-radix-select-trigger],
+.remax-theme:not(:is(.dark *)) select,
+.remax-theme:not(:is(.dark *)) [role="combobox"] {
+  background-color: white !important;
+  color: hsl(216, 30%, 15%) !important;
+}
+
+/* Separator inside dropdowns — light */
+html:not(.dark) body:has(.remax-theme) [data-radix-select-content] [data-radix-select-separator],
+html:not(.dark) body:has(.remax-theme) [data-radix-popper-content-wrapper] [role="separator"] {
+  background-color: hsl(216, 20%, 90%) !important;
+}
+
+/* Separator inside dropdowns — dark */
+html.dark body:has(.remax-theme) [data-radix-select-content] [data-radix-select-separator],
+html.dark body:has(.remax-theme) [data-radix-popper-content-wrapper] [role="separator"] {
+  background-color: hsl(216, 20%, 22%) !important;
+}
+
+/* Select group labels — light */
+html:not(.dark) body:has(.remax-theme) [data-radix-select-content] [data-radix-select-label] {
+  color: hsl(216, 30%, 45%) !important;
+}
+
+/* Select group labels — dark */
+html.dark body:has(.remax-theme) [data-radix-select-content] [data-radix-select-label] {
+  color: hsl(216, 15%, 55%) !important;
+}
+
+/* Checkmark icon on selected items */
+body:has(.remax-theme) [data-radix-select-content] [data-radix-select-item-indicator] {
+  color: hsl(216, 100%, 40%) !important;
+}
+body:has(.remax-theme) [data-radix-select-content] [role="option"][data-highlighted] [data-radix-select-item-indicator],
+body:has(.remax-theme) [data-radix-select-content] [role="option"][data-state="checked"][data-highlighted] [data-radix-select-item-indicator] {
+  color: white !important;
+}
+
+/* RE/MAX/MFR charts in dark mode */
+.dark .remax-theme .recharts-layer,
+.dark .remax-theme .recharts-surface {
+  outline: none;
+}
+
+.dark .remax-theme .recharts-rectangle.recharts-tooltip-cursor {
+  fill: hsl(var(--muted) / 0.28);
+  stroke: hsl(var(--border) / 0.5);
+}
+
+.dark .remax-theme .recharts-curve.recharts-tooltip-cursor {
+  stroke: hsl(var(--border));
+}
+
+.dark .remax-theme .recharts-sector[stroke='#fff'] {
+  stroke: hsl(var(--background));
+}
+
+@layer utilities {
+  .shadow-glow {
+    box-shadow: 0 0 20px hsl(var(--team-orange) / 0.15);
+  }
+
+  .shadow-glow-sm {
+    box-shadow: 0 0 10px hsl(var(--team-primary) / 0.2);
+  }
+
+  .bg-team-background {
+    background: linear-gradient(135deg, hsl(var(--team-background)) 0%, hsl(215 45% 12%) 100%);
+  }
+
+  /* Neumorphic / Glassmorphic utilities */
+  .neu-card {
+    background: hsl(0 0% 100%);
+    border-radius: 1rem;
+    box-shadow:
+      6px 6px 14px hsl(216 20% 85% / 0.55),
+      -6px -6px 14px hsl(0 0% 100% / 0.8);
+    border: 1px solid hsl(216 20% 94%);
+  }
+
+  .glass-card {
+    background: hsl(0 0% 100% / 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(0 0% 100% / 0.7);
+    border-radius: 0.75rem;
+  }
+
+  .neu-press {
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+    box-shadow:
+      4px 4px 10px hsl(216 20% 85% / 0.5),
+      -4px -4px 10px hsl(0 0% 100% / 0.7);
+  }
+  .neu-press:active {
+    box-shadow:
+      inset 3px 3px 8px hsl(216 20% 85% / 0.55),
+      inset -3px -3px 8px hsl(0 0% 100% / 0.7);
+    transform: scale(0.98);
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 12px hsl(43 90% 55% / 0.35);
+  }
+
+  /* Dark mode variants for neumorphic utilities inside remax-theme */
+  .dark .remax-theme .neu-card,
+  .dark.remax-theme .neu-card {
+    background: hsl(216 25% 14%);
+    box-shadow:
+      6px 6px 14px hsl(216 30% 8% / 0.6),
+      -6px -6px 14px hsl(216 20% 22% / 0.3);
+    border-color: hsl(216 20% 20%);
+  }
+
+  .dark .remax-theme .glass-card,
+  .dark.remax-theme .glass-card {
+    background: hsl(216 25% 16% / 0.55);
+    border-color: hsl(216 20% 22% / 0.5);
+  }
+
+  .dark .remax-theme .neu-press,
+  .dark.remax-theme .neu-press {
+    box-shadow:
+      4px 4px 10px hsl(216 30% 8% / 0.5),
+      -4px -4px 10px hsl(216 20% 22% / 0.3);
+  }
+  .dark .remax-theme .neu-press:active,
+  .dark.remax-theme .neu-press:active {
+    box-shadow:
+      inset 3px 3px 8px hsl(216 30% 8% / 0.55),
+      inset -3px -3px 8px hsl(216 20% 22% / 0.3);
+  }
+}
+
+/* Achievement glow animation - very subtle breathing effect */
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.85;
+    box-shadow: 0 0 6px hsl(var(--team-orange) / 0.15);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 12px hsl(var(--team-orange) / 0.3);
+  }
+}
+
+/* Golden glow pulsing border */
+@keyframes golden-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px 2px rgba(250, 204, 21, 0.3),
+                0 0 16px 4px rgba(250, 204, 21, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 12px 4px rgba(250, 204, 21, 0.5),
+                0 0 24px 8px rgba(250, 204, 21, 0.2);
+  }
+}
+
+.golden-spark-border {
+  animation: golden-glow-pulse 4s ease-in-out infinite;
+  border: 2px solid rgba(250, 204, 21, 0.5);
+}
+
+/* Hide map from PDF capture */
+.pdf-capture-mode .pdf-hide,
+.pdf-capture-mode .leaflet-container {
+  display: none !important;
+}
